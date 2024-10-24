@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 
 
 
-const Navbar = () => {
+const Navbar = () => {          
   return (
     <motion.nav initial={{y: -250}} animate={{y: -10}} className='flex justify-center pt-7 md:pt-16 relative z-50 bg-transparent'>
       <section className='flex items-center justify-evenly w-[300px] md:w-[400px] border rounded-[20px] border-slate-300 p-3' >

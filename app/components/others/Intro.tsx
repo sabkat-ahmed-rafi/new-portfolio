@@ -15,11 +15,22 @@ const Intro = () => {
                 words={["A Programmer", "A Developer", "A Student"]}
                /></h3>
             <p className='text-slate-700 dark:text-white'>A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.</p>
-            <ShimmerButton className="shadow-2xl mx-auto lg:mx-0">
-             <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+            <div className='md:flex md:flex-row flex-col justify-center lg:justify-start  md:space-x-6 space-x-1 '>
+            <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>
+            <ShimmerButton className="shadow-2xl mx-auto lg:mx-0 ">
+             <span className="whitespace-pre-wrap text-center font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                 Download Resume
             </span>
             </ShimmerButton>
+            </a>
+            <a href="https://drive.google.com/file/d/1a4Y7jwiA8UqUPSREGrvhY5yMLjbT9uH_/view?usp=sharing" target='_blank'>
+            <ShimmerButton className="shadow-2xl mx-auto lg:mx-0">
+             <span className="whitespace-pre-wrap text-center font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                See Resume
+            </span>
+            </ShimmerButton>
+            </a>
+            </div>
         </section>
     </>
   )
