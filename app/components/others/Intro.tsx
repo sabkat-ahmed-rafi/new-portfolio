@@ -1,6 +1,7 @@
 import React from 'react'
 import {WordRotate} from "@/components/magicui/word-rotate";
 import ShimmerButton from "@/components/magicui/shimmer-button";
+import ShimmerButton2 from "@/components/magicui/shimmer-button2";
 
 
 
@@ -24,11 +25,11 @@ const Intro = () => {
             </ShimmerButton>
             </a>
             <a href="https://drive.google.com/file/d/1a4Y7jwiA8UqUPSREGrvhY5yMLjbT9uH_/view?usp=sharing" target='_blank'>
-            <ShimmerButton className="shadow-2xl mx-auto lg:mx-0">
-             <span className="whitespace-pre-wrap text-center font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                See Resume
+            <ShimmerButton2 className="shadow-2xl mx-auto lg:mx-0">
+             <span className="whitespace-pre-wrap text-center font-medium leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
+             Preview Resume
             </span>
-            </ShimmerButton>
+            </ShimmerButton2>
             </a>
             </div>
         </section>
