@@ -1,6 +1,7 @@
 import Navbar from "./components/NavBar/NavBar";
 import Intro from "./components/others/Intro";
 import MouseChecker from "./components/others/MouseChecker";
+import Skill from "./components/others/skill";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Navbar />
       <MouseChecker />
       <Intro />
+      <Skill />
    </section>
   );
 }
