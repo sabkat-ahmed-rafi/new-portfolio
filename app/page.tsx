@@ -3,6 +3,7 @@ import Navbar from "./components/NavBar/NavBar";
 import Intro from "./components/others/Intro";
 import MouseChecker from "./components/others/MouseChecker";
 import Skill from "./components/others/Skill";
+import Projects from "./components/project/Projects";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
     />
       </div>
       <Skill />
+      <Projects />
    </section>
   );
 }
