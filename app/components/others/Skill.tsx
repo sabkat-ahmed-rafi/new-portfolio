@@ -52,7 +52,7 @@ const Skill = () => {
         <img src="https://img.shields.io/badge/OOP-8A2BE2?style=flat-square&logo=object&color=%23fd7e14" alt="OOP" />
         <img src="https://img.shields.io/badge/git-8A2BE2?style=flat-square&logo=git&color=black" alt="git" />
       </div>
-      <div className='md:visible invisible'>
+      <div>
       <IconCloud iconSlugs={slugs} />
       </div>
       </div>
