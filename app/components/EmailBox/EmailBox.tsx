@@ -1,8 +1,10 @@
 'use client'
 import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser';
-import Lottie from 'lottie-react';
-import EmailPhoto from '../../../public/files/EmailFile.json'
+import toast, { Toaster } from 'react-hot-toast';
+
+
+
 const EmailBox = () => {
 
     const [name, setName] = useState('')
@@ -14,7 +16,9 @@ const EmailBox = () => {
     const sendEmail = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        
+        if(name == "" && email == "" && message == "") {
+            return toast.error("Write something to send something 😁")
+        }
         
         emailjs
           .sendForm(process.env.NEXT_PUBLIC_YOUR_SERVICE_ID ?? "", process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID ?? "", form.current ?? "", {
@@ -23,6 +27,10 @@ const EmailBox = () => {
           .then(
             () => {
               console.log('SUCCESS!');
+              toast.success('Message sent successfully 😀');
+              setName("");
+              setEmail("");
+              setMessage("");
             },
             (error) => {
               console.log('FAILED...', error.text);
@@ -44,20 +52,23 @@ const EmailBox = () => {
 	<form ref={form} onSubmit={sendEmail} className="space-y-6">
 		<div>
 			<label htmlFor="name" className="text-sm font-semibold">Full name</label>
-			<input onChange={(e) => setName(e.target.value)} id="name" type="text" name='user_name' placeholder="" value={name} className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300" />
+			<input onChange={(e) => setName(e.target.value)}  type="text" name='user_name' placeholder="" value={name} className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300" />
 		</div>
 		<div>
 			<label htmlFor="email" className="text-sm font-semibold">Email</label>
-			<input onChange={(e) => setEmail(e.target.value)} value={email} id="email" type="email" name='user_email' className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300" />
+			<input onChange={(e) => setEmail(e.target.value)} value={email} type="email" name='user_email' className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300" />
 		</div>
 		<div>
 			<label htmlFor="message" className="text-sm font-semibold">Message</label>
-			<textarea onChange={(e) => setMessage(e.target.value)} value={message} id="message" name='message' rows={3} className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300"></textarea>
+			<textarea onChange={(e) => setMessage(e.target.value)} value={message} name='message' rows={3} className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300"></textarea>
 		</div>
 		<button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:text-gray-50 border border-slate-300 bg-slate-950 text-white">Send Message</button>
 	</form>
         </div>  
        </section>
+       <Toaster   
+       position="bottom-right"
+       reverseOrder={true} />
     </>
   )
 }
