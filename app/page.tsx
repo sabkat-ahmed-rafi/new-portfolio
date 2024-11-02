@@ -1,3 +1,4 @@
+import EmailBox from "./components/EmailBox/EmailBox";
 import { VelocityScroll } from "./components/magicui/scroll-based-velocity";
 import Navbar from "./components/NavBar/NavBar";
 import Intro from "./components/others/Intro";
@@ -20,6 +21,7 @@ export default function Home() {
       </div>
       <Skill />
       <Projects />
+      <EmailBox />
    </section>
   );
 }
