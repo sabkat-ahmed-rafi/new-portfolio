@@ -62,7 +62,7 @@ const EmailBox = () => {
 			<label htmlFor="message" className="text-sm font-semibold">Message</label>
 			<textarea onChange={(e) => setMessage(e.target.value)} value={message} name='message' rows={3} className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300"></textarea>
 		</div>
-		<button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:text-gray-50 border border-slate-300 bg-slate-950 text-white">Send Message</button>
+		<button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:text-gray-50 border border-slate-300 bg-slate-950 text-white hover:border hover:border-slate-950 hover:bg-white hover:text-slate-950 hover:tracking-[3px] transition-all ">Send Message</button>
 	</form>
         </div>  
        </section>
