@@ -40,7 +40,7 @@ const EmailBox = () => {
 
   return (
     <>
-       <section className='pb-[100px]'>
+       <section className='pb-[50px]'>
        <div className="grid max-w-screen-xl items-center grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 shadow-lg shadow-slate-300 ">
 	<div className="flex flex-col justify-between items-left">
 		<div className="space-y-2 lg:pl-14">
