@@ -1,3 +1,4 @@
+import Education from "./components/Education/Education";
 import EmailBox from "./components/EmailBox/EmailBox";
 import { VelocityScroll } from "./components/magicui/scroll-based-velocity";
 import Navbar from "./components/NavBar/NavBar";
@@ -8,7 +9,7 @@ import Projects from "./components/project/Projects";
 
 export default function Home() {
   return (
-   <section className="">
+   <section>
       <Navbar />
       <MouseChecker />
       <Intro />
@@ -21,6 +22,7 @@ export default function Home() {
       </div>
       <Skill />
       <Projects />
+      <Education/>
       <EmailBox />
    </section>
   );

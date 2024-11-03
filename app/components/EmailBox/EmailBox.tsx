@@ -45,7 +45,7 @@ const EmailBox = () => {
 	<div className="flex flex-col justify-between items-left">
 		<div className="space-y-2 lg:pl-14">
 			<h2 className="text-4xl font-extrabold font-lilita leading-tight lg:text-5xl">Let's talk!</h2>
-			<div className="dark:text-gray-600">Connect with me through a message.</div>
+			<div className="dark:text-gray-600 text-slate-700">Connect with me through a message.</div>
 		</div>
 
 	</div>
