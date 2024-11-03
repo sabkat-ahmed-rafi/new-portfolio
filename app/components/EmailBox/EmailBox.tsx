@@ -44,7 +44,7 @@ const EmailBox = () => {
        <div className="grid max-w-screen-xl items-center grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 shadow-lg shadow-slate-300 ">
 	<div className="flex flex-col justify-between items-left">
 		<div className="space-y-2 lg:pl-14">
-			<h2 className="text-4xl font-extrabold font-lilita leading-tight lg:text-5xl">Let's talk!</h2>
+			<h2 className="text-4xl font-extrabold font-lilita leading-tight lg:text-5xl">Let&apos;s talk!</h2>
 			<div className="dark:text-gray-600 text-slate-700">Connect with me through a message.</div>
 		</div>
 

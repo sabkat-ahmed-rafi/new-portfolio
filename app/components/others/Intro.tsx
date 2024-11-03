@@ -9,7 +9,7 @@ const Intro = () => {
   return (
     <>
         <section className='md:w-[500px] space-y-2 text-center lg:text-left md:mx-auto lg:mt-20 lg:ml-[80px] lg:top-[12rem] lg:left-[5rem] '>
-            <h1 className='font-lilita font-extrabold  text-5xl dark:text-white'>Hi, I'm Rafi</h1>
+            <h1 className='font-lilita font-extrabold  text-5xl dark:text-white'>Hi, I&apos;m Rafi</h1>
             <h3 className='text-4xl  font-extralight font-serif text-slate-800'>
             <WordRotate
                 className="text-4xl  font-extralight font-serif text-slate-800 dark:text-white"
