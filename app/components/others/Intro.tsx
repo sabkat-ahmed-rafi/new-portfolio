@@ -24,7 +24,7 @@ const Intro = () => {
             </span>
             </ShimmerButton>
             </a>
-            <a href="https://drive.google.com/file/d/1a4Y7jwiA8UqUPSREGrvhY5yMLjbT9uH_/view?usp=sharing" target='_blank'>
+            <a href="https://drive.google.com/file/d/1oohX84TJxCAMJQGat6RVNLR0xX3ADp8I/view?usp=sharing" target='_blank'>
             <ShimmerButton2 className="shadow-2xl mx-auto lg:mx-0">
              <span className="whitespace-pre-wrap text-center font-medium leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
              Preview Resume
