@@ -4,7 +4,6 @@ import Footer from "./components/Footer/Footer";
 import { VelocityScroll } from "./components/magicui/scroll-based-velocity";
 import Navbar from "./components/NavBar/NavBar";
 import Intro from "./components/others/Intro";
-import MouseChecker from "./components/others/MouseChecker";
 import Skill from "./components/others/Skill";
 import Projects from "./components/project/Projects";
 
@@ -12,7 +11,6 @@ export default function Home() {
   return (
    <section>
       <Navbar />
-      <MouseChecker />
       <Intro />
       <div className="lg:mt-60 md:mt-0 mt-5">
       <VelocityScroll
