@@ -23,44 +23,44 @@ const Intro = () => {
   };
 
   useGSAP(() => {
-      const tl = gsap.timeline();
-
-      tl
-      .fromTo(
+    const tl = gsap.timeline();
+  
+    tl.fromTo(
         ".I", 
         { y: -400, x: 150 }, 
         { 
           y: 0, 
-          x:0,
+          x: 0,
           duration: 2, 
           ease: "elastic.inOut"
-        }, 0)
-
+        }, 0
+      )
       .fromTo(
         [".left-element", ".right-element"],
         { x: 0 }, 
         {
-          x: (i) => (i === 0 ? "-=50" : "+=50"), // Left goes left, right goes right
+          x: (i) => (i === 0 ? "-=50" : "+=50"),
           duration: 0.7,
           ease: "elastic.inOut"
-        }, 1.5)
-
+        }, 1.5
+      )
       .to(".M", {
-          rotation: 360,
-          duration: 2,
-          ease: "elastic.inOut"
-        }, 2)
-
+        rotation: 360,
+        duration: 2,
+        ease: "elastic.inOut"
+      }, 2)
       .to(
         [".left-element", ".right-element"], 
         { 
           x: 0,
           duration: 1,
           ease: "elastic.inOut"
-        }, 3)
-        .call(() => startFlipI());  
-
-  }), [];
+        }, 3
+      )
+      .call(() => startFlipI());
+  
+  }, []);
+  
 
   return (
     <>
