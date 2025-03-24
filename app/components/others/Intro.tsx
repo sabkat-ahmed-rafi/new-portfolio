@@ -11,6 +11,17 @@ gsap.registerPlugin(useGSAP);
 
 const Intro = () => {
 
+  const startFlipI = () => {
+    gsap.to(".flipI", { 
+      rotationX: 180,
+      duration: 0.5, 
+      repeat: -1,
+      yoyo: true,
+      ease: "Power2.inOut",
+      repeatDelay: 3
+     });
+  };
+
   useGSAP(() => {
       const tl = gsap.timeline();
 
@@ -46,15 +57,18 @@ const Intro = () => {
           x: 0,
           duration: 1,
           ease: "elastic.inOut"
-        }, 3);
+        }, 3)
+        .call(() => startFlipI());  
 
   }), [];
 
   return (
     <>
         <section className='flex flex-col justify-center items-center  space-y-2 text-center md:mx-auto lg:mt-10'>
-            <h1 className='font-lilita font-extrabold  text-[100px] dark:text-white'>
-              <span className='inline-block left-element'>Hi, I&apos;</span> 
+            <h1 className='font-lilita font-extrabold text-[100px] dark:text-white'>
+              <span className='inline-block left-element'>
+                H<span className='inline-block flipI'>i</span>, I&apos;
+              </span>
               <span className='inline-block M'>m</span>
               <span className='inline-block right-element sm:pl-5'>Raf
                 <span className='inline-block I'>i</span>
