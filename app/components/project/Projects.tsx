@@ -10,22 +10,22 @@ const Projects = () => {
       className="relative flex flex-col md:w-[400px] items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl space-y-2"
       color={["#FFFFFF", "#090909", "#383B43"]}
     >
-     <h1 className='font-extrabold text-xl'>MediMarketHub</h1>
-     <p className='text-center'>MediMarketHub is a Multi-Vendor E-commerce Platform for Medicines and Healthcare Products which is built with MERN stack.</p>
+     <h1 className='font-extrabold text-xl'>QuantumDocs</h1>
+     <p className='text-center'>QuantumDoc is a real-time collaborative document editor, similar to Google Docs..</p>
      <div className='flex space-x-3 font-semibold'>
-     <p className='hover:underline hover:text-blue-700'><a href="https://zesty-florentine-44a022.netlify.app/" target='_blank'>Live</a></p>
-     <p className='hover:underline hover:text-blue-700'><a href="https://github.com/sabkat-ahmed-rafi/MediMarketHub-Frontend" target='_blank'>GitHub</a></p>
+     <p className='hover:underline hover:text-blue-700'><a href="https://quantum-docs-frontend.vercel.app" target='_blank'>Live</a></p>
+     <p className='hover:underline hover:text-blue-700'><a href="https://github.com/sabkat-ahmed-rafi/QuantumDocs" target='_blank'>GitHub</a></p>
      </div>
     </ShineBorder>
     <ShineBorder
       className="relative flex flex-col md:w-[400px] items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl space-y-2"
       color={["#FFFFFF", "#090909", "#383B43"]}
     >
-     <h1 className='font-extrabold text-xl'>CareerCove</h1>
-     <p className='text-center'>CareerCove is a Job Marketplace where user can post and apply for a jobs.</p>
+     <h1 className='font-extrabold text-xl'>MediMarketHub</h1>
+     <p className='text-center'>MediMarketHub is a Multi-Vendor E-commerce Platform for Medicines and Healthcare Products which is built with MERN stack.</p>
      <div className='flex space-x-3 font-semibold'>
-     <p className='hover:underline hover:text-blue-700'><a href="https://sparkly-scone-67107e.netlify.app/" target='_blank'>Live</a></p>
-     <p className='hover:underline hover:text-blue-700'><a href="https://github.com/sabkat-ahmed-rafi/CareerCove-Frontend" target='_blank'>GitHub</a></p>
+     <p className='hover:underline hover:text-blue-700'><a href="https://zesty-florentine-44a022.netlify.app/" target='_blank'>Live</a></p>
+     <p className='hover:underline hover:text-blue-700'><a href="https://github.com/sabkat-ahmed-rafi/MediMarketHub-Frontend" target='_blank'>GitHub</a></p>
      </div>
     </ShineBorder>
     </section>
