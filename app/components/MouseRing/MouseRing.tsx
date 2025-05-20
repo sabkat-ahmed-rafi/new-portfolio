@@ -13,21 +13,14 @@ const MouseRing = () => {
   const handleMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
-
-      const el = document.elementFromPoint(e.clientX, e.clientY);
-      const isInsideNoRing = el?.closest(".no-ring-cursor");
-      setVisible(!isInsideNoRing);
-
   }
 
   const animate = () => {
       ring.current.x += (mouse.current.x - ring.current.x) * 0.15;
       ring.current.y += (mouse.current.y - ring.current.y) * 0.15;
 
-      const scale = visible ? 1 : 0.3;
-
       if(ringRef.current) {
-          ringRef.current.style.transform = `translate(${ring.current.x}px, ${ring.current.y}px) translate(-50%, -50%) scale(${scale})`;
+          ringRef.current.style.transform = `translate(${ring.current.x}px, ${ring.current.y}px) translate(-50%, -50%)`;
       };
 
       requestAnimationFrame(animate);
