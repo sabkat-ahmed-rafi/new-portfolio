@@ -8,7 +8,7 @@ const MouseRing = () => {
   const ringRef = useRef<HTMLDivElement>(null);
   const mouse = useRef({ x: 0, y: 0 });
   const ring = useRef({ x: 0, y: 0 });
-  const [visible, setVisible] = useState(true);
+  
 
   const handleMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
