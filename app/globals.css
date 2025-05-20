@@ -87,3 +87,8 @@ body, html {
   z-index: 9999;
   transform: translate(-50%, -50%);
 }
+
+::selection {
+  background: black; /* black background */
+  color: white;      /* white text */
+}
