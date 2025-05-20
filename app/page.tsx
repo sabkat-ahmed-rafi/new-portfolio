@@ -2,6 +2,7 @@ import Education from "./components/Education/Education";
 import EmailBox from "./components/EmailBox/EmailBox";
 import Footer from "./components/Footer/Footer";
 import { VelocityScroll } from "./components/magicui/scroll-based-velocity";
+import MouseRing from "./components/MouseRing/MouseRing";
 import Navbar from "./components/NavBar/NavBar";
 import Intro from "./components/others/Intro";
 import Skill from "./components/others/Skill";
@@ -24,6 +25,7 @@ export default function Home() {
       <Education/>
       <EmailBox />
       <Footer />
+      <MouseRing />
    </section>
   );
 }
