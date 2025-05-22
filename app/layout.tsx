@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Sabkat Ahmed Rafi | Portfolio",
+  title: `Who 🤍 Coding </>`,
   description: "This is Subkat Ahmed Rafi's portfolio",
 };
 
