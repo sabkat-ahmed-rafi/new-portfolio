@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Preloader from "./components/Preloader/Preloader";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,11 +19,7 @@ export const metadata: Metadata = {
   description: "This is Subkat Ahmed Rafi's portfolio",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout( { children }: Readonly<{ children: React.ReactNode }> ) {
   return (
     <html lang="en">
       <head>
@@ -31,7 +28,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          {children}
+        {children}
+        <Preloader />
       </body>
     </html>
   );
