@@ -6,7 +6,6 @@ import MouseRing from "./components/MouseRing/MouseRing";
 import Navbar from "./components/NavBar/NavBar";
 import Intro from "./components/others/Intro";
 import Skill from "./components/others/Skill";
-import Particle from "./components/Particle/Particle";
 import Projects from "./components/project/Projects";
 
 export default function Home() {
@@ -27,7 +26,6 @@ export default function Home() {
       <EmailBox />
       <Footer />
       <MouseRing />
-      <Particle />
    </section>
   );
 }
