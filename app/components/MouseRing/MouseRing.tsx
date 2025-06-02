@@ -38,7 +38,7 @@ const MouseRing = () => {
   return (
     <div
       ref={ringRef}
-      className="pointer-events-none fixed top-0 left-0 z-[9999] w-10 h-10 border border-black rounded-full"
+      className="pointer-events-none fixed top-0 left-0 z-[9999] w-10 h-10 border border-[#f7939d] rounded-full"
     />
   )
 }

@@ -24,7 +24,7 @@ const Preloader = () => {
   return (
     <div
       ref={preloaderRef}
-      className="fixed inset-0 z-50 bg-black flex items-center justify-center text-white"
+      className="fixed inset-0 z-50 bg-[#f7939d] flex items-center justify-center text-white"
     >
     </div>
   );
