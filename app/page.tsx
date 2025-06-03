@@ -9,7 +9,11 @@ import Projects from "./components/project/Projects";
 
 export default function Home() {
   return (
-   <section className="overflow-hidden">
+   <section 
+   style={{ 
+    background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #F7939D 350%)", backgroundAttachment: "fixed",
+   }} 
+   className="min-h-screen w-full">
       <Intro />
       <div className="lg:mt-60 md:mt-0 mt-5">
       <VelocityScroll

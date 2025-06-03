@@ -10,9 +10,9 @@ import localFont from 'next/font/local';
 
 gsap.registerPlugin(useGSAP);
 
-  const CherryBombOne = localFont({
-  src: "../../fonts/CherryBombOne.ttf",
-  variable: "--font-cherry-bomd-one",
+  const Anton = localFont({
+  src: "../../fonts/Anton.ttf",
+  variable: "--font-anton",
   weight: "400"
 })
 
@@ -72,26 +72,30 @@ const Intro = () => {
 
   return (
     <>
-        <section style={{ background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #F7939D 350%)" }} className='flex flex-col justify-center items-center  space-y-2 text-center md:mx-auto h-screen  text-[#F7939D] '>
-            <div className={`text-[100px] ${CherryBombOne.variable}`} style={{ fontFamily: 'var(--font-cherry-bomd-one)' }} >
+        <section className='flex flex-col lg:flex-row justify-between space-y-2 text-center text-[#F7939D]  '>
+            <div className={`md:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable}`} style={{ fontFamily: 'var(--font-anton)' }} >
               <h1>SABKAT</h1>
               <h1>AHMED</h1>
               <h1>RAFI</h1>
             </div>
-            <div className='md:flex md:flex-row flex-col justify-center lg:justify-start  md:space-x-6 space-x-1 '>
-            <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank' className='border-2'>
-            <ShimmerButton className="shadow-2xl mx-auto lg:mx-0">
-             <span className="whitespace-pre-wrap text-center font-extrabold leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
+            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 lg:mr-3'>
+            <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>
+              <div className='border-2 inline-block mb-3 sm:mb-0 mr-24 sm:mr-0'>
+               <ShimmerButton className="shadow-2xl mx-auto lg:mx-0">
+               <span className="whitespace-pre-wrap text-center font-extrabold leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
                 Download Resume
-            </span>
-            </ShimmerButton>
+               </span>
+               </ShimmerButton>
+              </div>
             </a>
-            <a href="https://drive.google.com/file/d/1SJHuo9RgJSV5HN1uamLQ13SLwQnExjk7/view?usp=drive_link" target='_blank' className='border-2 border-[#f7939d]'>
-            <ShimmerButton2 className="shadow-2xl mx-auto lg:mx-0">
-             <span className="whitespace-pre-wrap text-center font-extrabold leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
-             Preview Resume
-            </span>
-            </ShimmerButton2>
+            <a href="https://drive.google.com/file/d/1SJHuo9RgJSV5HN1uamLQ13SLwQnExjk7/view?usp=drive_link" target='_blank'>
+              <div className='border-2 border-[#f7939d] inline-block ml-24 sm:ml-0'>
+                <ShimmerButton2 className="shadow-2xl mx-auto lg:mx-0">
+                <span className="whitespace-pre-wrap text-center font-extrabold leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
+                 Preview Resume
+                </span>
+               </ShimmerButton2>
+              </div>
             </a>
             </div>
         </section>
