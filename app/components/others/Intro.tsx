@@ -78,7 +78,7 @@ const Intro = () => {
               <h1>AHMED</h1>
               <h1>RAFI</h1>
             </div>
-            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 lg:mr-3'>
+            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3'>
             <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>
               <div className='border-2 inline-block mb-3 sm:mb-0 mr-24 sm:mr-0'>
                <ShimmerButton className="shadow-2xl mx-auto lg:mx-0">
