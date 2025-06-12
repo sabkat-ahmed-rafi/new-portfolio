@@ -7,6 +7,7 @@ import ShimmerButton2 from "@/components/magicui/shimmer-button2";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import localFont from 'next/font/local';
+import MouseRing from '../MouseRing/MouseRing';
 
 gsap.registerPlugin(useGSAP);
 
@@ -72,13 +73,15 @@ const Intro = () => {
 
   return (
     <>
-        <section className='flex flex-col lg:flex-row justify-between space-y-2 text-center text-[#F7939D]  '>
+        <section className='flex flex-col lg:flex-row justify-between space-y-2 text-center text-[#F7939D] min-h-screen' 
+        style={{background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #F7939D 350%)"}} 
+        >
             <div className={`md:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable}`} style={{ fontFamily: 'var(--font-anton)' }} >
               <h1>SABKAT</h1>
               <h1>AHMED</h1>
               <h1>RAFI</h1>
             </div>
-            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3'>
+            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 md:pb-10'>
             <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>
               <div className='border-2 inline-block mb-3 sm:mb-0 mr-24 sm:mr-0'>
                <ShimmerButton className="shadow-2xl mx-auto lg:mx-0">
@@ -99,6 +102,7 @@ const Intro = () => {
             </a>
             </div>
         </section>
+        <MouseRing />
     </>
   )
 }

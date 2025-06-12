@@ -2,18 +2,13 @@ import Education from "./components/Education/Education";
 import EmailBox from "./components/EmailBox/EmailBox";
 import Footer from "./components/Footer/Footer";
 import { VelocityScroll } from "./components/magicui/scroll-based-velocity";
-import MouseRing from "./components/MouseRing/MouseRing";
 import Intro from "./components/others/Intro";
 import Skill from "./components/others/Skill";
 import Projects from "./components/project/Projects";
 
 export default function Home() {
   return (
-   <section 
-   style={{ 
-    background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #F7939D 350%)", backgroundAttachment: "fixed",
-   }} 
-   className="min-h-screen w-full">
+   <section>
       <Intro />
       <div className="lg:mt-60 md:mt-0 mt-5">
       <VelocityScroll
@@ -27,7 +22,6 @@ export default function Home() {
       <Education/>
       <EmailBox />
       <Footer />
-      <MouseRing />
    </section>
   );
 }
