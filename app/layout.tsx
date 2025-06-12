@@ -26,7 +26,7 @@ export default function RootLayout( { children }: Readonly<{ children: React.Rea
       <link rel="icon" href="/images/favicon.png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         {children}
         <Preloader />

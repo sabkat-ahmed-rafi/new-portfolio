@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React, { useRef } from 'react'
 import {WordRotate} from "@/components/magicui/word-rotate";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import ShimmerButton2 from "@/components/magicui/shimmer-button2";
@@ -11,7 +11,7 @@ import MouseRing from '../MouseRing/MouseRing';
 
 gsap.registerPlugin(useGSAP);
 
-  const Anton = localFont({
+const Anton = localFont({
   src: "../../fonts/Anton.ttf",
   variable: "--font-anton",
   weight: "400"
@@ -19,61 +19,13 @@ gsap.registerPlugin(useGSAP);
 
 const Intro = () => {
 
-  const startFlipI = () => {
-    gsap.to(".flipI", { 
-      rotationX: 180,
-      duration: 0.5, 
-      repeat: -1,
-      yoyo: true,
-      ease: "Power2.inOut",
-      repeatDelay: 3
-     });
-  };
-
-  // useGSAP(() => {
-  //   const tl = gsap.timeline();
-  
-  //   tl.fromTo(
-  //       ".I", 
-  //       { y: -400, x: 150 }, 
-  //       { 
-  //         y: 0, 
-  //         x: 0,
-  //         duration: 2, 
-  //         ease: "elastic.inOut"
-  //       }, 0
-  //     )
-  //     .fromTo(
-  //       [".left-element", ".right-element"],
-  //       { x: 0 }, 
-  //       {
-  //         x: (i) => (i === 0 ? "-=50" : "+=50"),
-  //         duration: 0.7,
-  //         ease: "elastic.inOut"
-  //       }, 1.5
-  //     )
-  //     .to(".M", {
-  //       rotation: 360,
-  //       duration: 2,
-  //       ease: "elastic.inOut"
-  //     }, 2)
-  //     .to(
-  //       [".left-element", ".right-element"], 
-  //       { 
-  //         x: 0,
-  //         duration: 1,
-  //         ease: "elastic.inOut"
-  //       }, 3
-  //     )
-  //     .call(() => startFlipI());
-  
-  // }, []);
-  
-
+const sectionRef = useRef<HTMLElement>(null);
 
   return (
     <>
-        <section className='flex flex-col lg:flex-row justify-between space-y-2 text-center text-[#F7939D] min-h-screen' 
+        <section 
+        ref={sectionRef}
+        className='flex flex-col lg:flex-row justify-between space-y-2 text-center text-[#F7939D] min-h-screen' 
         style={{background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #F7939D 350%)"}} 
         >
             <div className={`md:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable}`} style={{ fontFamily: 'var(--font-anton)' }} >
@@ -102,7 +54,7 @@ const Intro = () => {
             </a>
             </div>
         </section>
-        <MouseRing />
+        <MouseRing parentRef={sectionRef} />
     </>
   )
 }
