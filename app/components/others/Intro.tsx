@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useRef } from 'react'
-import {WordRotate} from "@/components/magicui/word-rotate";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import ShimmerButton2 from "@/components/magicui/shimmer-button2";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import localFont from 'next/font/local';
 import MouseRing from '../MouseRing/MouseRing';
+import Particles from '../Particle/Particles';
 
 gsap.registerPlugin(useGSAP);
 
@@ -33,7 +33,9 @@ const sectionRef = useRef<HTMLElement>(null);
               <h1>AHMED</h1>
               <h1>RAFI</h1>
             </div>
-            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 md:pb-10'>
+            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 md:pb-10'
+            style={{zIndex: '1'}}
+            >
             <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>
               <div className='border-2 inline-block mb-3 sm:mb-0 mr-24 sm:mr-0'>
                <ShimmerButton className="shadow-2xl mx-auto lg:mx-0">
@@ -55,6 +57,18 @@ const sectionRef = useRef<HTMLElement>(null);
             </div>
         </section>
         <MouseRing parentRef={sectionRef} />
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0 }}>
+          <Particles
+            particleColors={['#f7939d']}
+            particleCount={500}
+            particleSpread={10}
+            speed={0.2}
+            particleBaseSize={100}
+            // moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
+          />
+        </div>
     </>
   )
 }
