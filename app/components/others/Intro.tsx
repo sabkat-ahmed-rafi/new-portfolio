@@ -23,7 +23,7 @@ const sectionRef = useRef<HTMLElement>(null);
 
   return (
     <>
-        <section 
+      <section 
         ref={sectionRef}
         className='flex flex-col lg:flex-row justify-between space-y-2 text-center text-[#F7939D] min-h-screen' 
         style={{background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #F7939D 350%)"}} 
@@ -55,20 +55,20 @@ const sectionRef = useRef<HTMLElement>(null);
               </div>
             </a>
             </div>
-        </section>
         <MouseRing parentRef={sectionRef} />
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0 }}>
           <Particles
             particleColors={['#f7939d']}
             particleCount={500}
             particleSpread={10}
-            speed={0.2}
+            speed={0.3}
             particleBaseSize={100}
-            // moveParticlesOnHover={true}
+            moveParticlesOnHover={false}
             alphaParticles={false}
             disableRotation={false}
-          />
+            />
         </div>
+      </section>
     </>
   )
 }
