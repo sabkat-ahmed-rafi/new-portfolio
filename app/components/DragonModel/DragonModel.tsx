@@ -92,8 +92,9 @@ const Model = () => {
           repeat: -1
       });
 
+      // Small Tilt Animation
       gsap.to(dragonRef.current.rotation, {
-        z: "+=0.1",         // Small tilt
+        z: "+=0.1",      
         duration: 2,
         ease: "sine.inOut",
         yoyo: true,
