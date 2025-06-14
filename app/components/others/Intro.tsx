@@ -26,7 +26,7 @@ const sectionRef = useRef<HTMLElement>(null);
     <>
       <section 
         ref={sectionRef}
-        className='flex flex-col lg:flex-row justify-between space-y-2 text-center text-[#F7939D] min-h-screen' 
+        className='flex flex-col lg:flex-row justify-between text-center text-[#F7939D] min-h-screen' 
         style={{background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #F7939D 350%)"}} 
         >
             <div className={`md:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable}`} style={{ fontFamily: 'var(--font-anton)' }} >
