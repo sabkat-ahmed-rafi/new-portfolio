@@ -1,9 +1,10 @@
 "use client";
 
-import React, { Suspense, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { AnimationMixer, Mesh, MeshStandardMaterial } from "three";
+import { AnimationMixer, Mesh, MeshStandardMaterial, Group } from "three";
+import gsap from "gsap";
 
 declare global {
   namespace JSX {
@@ -18,15 +19,18 @@ useGLTF.preload("/dragon/source/dragon.glb");
 const Model = () => {
   const {scene, animations} = useGLTF("/dragon/source/dragon.glb");
   const mixer = useRef<AnimationMixer>();
+  const dragonRef = useRef<Group>(null);
 
   useEffect(() => {
+
+    // Giving prebuilt animation
     if(animations.length) {
         mixer.current = new AnimationMixer(scene);
         const wingsFlying = animations[0];
         mixer.current?.clipAction(wingsFlying).play();
     }
 
-    // Change materials to pinkish/blackish
+    // Change materials to pinkish
     scene.traverse((child) => {
       if ((child as Mesh).isMesh) {
         const mesh = child as Mesh;
@@ -59,25 +63,58 @@ const Model = () => {
             applyColor(mat as MeshStandardMaterial, "#F7939D")
         );
     } else {
-        // #a19ca1 
-        // #cfc8cf
         applyColor(mesh.material as MeshStandardMaterial, "#cfc8cf");
       }
     };
       }
     });
 
+    // Giving my own animation with gsap
+    if (dragonRef.current) {
+
+      // Rotating (Idle Rotating) Animation  
+      gsap.to(dragonRef.current.rotation, {
+        y: dragonRef.current.rotation.y + Math.PI * 2,
+        delay: 3, // Animation will start after 3 seconds
+        duration: 2, // Animation will complete withing 2 seconds
+        ease: "power2.inOut", // Starts smoothly and Ends smoothly
+        repeat: -1, // Repeat the animation infinite
+        repeatDelay: 5, // Repeat the animation after each 5 seconds
+        // yoyo: true, // Yoyo will reverse the animation
+      });
+
+      // Floating (Idle Hover) Animation
+      gsap.to(dragonRef.current.position, {
+          y: "+=0.4",
+          duration: 1.5,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1
+      });
+
+      gsap.to(dragonRef.current.rotation, {
+        z: "+=0.1",         // Small tilt
+        duration: 2,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1
+      });
+
+
+    }
+
     return () => {
       mixer.current?.stopAllAction();
     };
   }, [animations, scene])
 
-    useFrame((state, delta) => {
+  useFrame((_, delta) => {
     mixer.current?.update(delta);
   });
 
   return (
   <primitive
+    ref={dragonRef}
     object={scene}
     scale={0.3}
     position={[-0.5, -1.5, 1]} 
@@ -85,6 +122,13 @@ const Model = () => {
   />
 );
 };
+
+//   <primitive
+//     object={scene}
+//     scale={0.3}
+//     position={[-0.5, -1.5, 1]} 
+//     rotation={[0, -0.7, 0]} 
+//   />
 
 const DragonModel = () => {
   return (
