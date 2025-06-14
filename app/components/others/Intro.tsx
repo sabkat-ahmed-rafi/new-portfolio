@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import localFont from 'next/font/local';
 import MouseRing from '../MouseRing/MouseRing';
 import Particles from '../Particle/Particles';
+import DragonModel from '../DragonModel/DragonModel';
 
 gsap.registerPlugin(useGSAP);
 
@@ -34,7 +35,7 @@ const sectionRef = useRef<HTMLElement>(null);
               <h1>RAFI</h1>
             </div>
             <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 md:pb-10'
-            style={{zIndex: '1'}}
+            style={{zIndex: '2'}}
             >
             <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>
               <div className='border-2 inline-block mb-3 sm:mb-0 mr-24 sm:mr-0'>
@@ -68,6 +69,10 @@ const sectionRef = useRef<HTMLElement>(null);
             disableRotation={false}
             />
         </div>
+        <div style={{ width: "100%", height: "100vh", position: "absolute", zIndex: 1 }}>
+          <DragonModel />
+        </div>
+
       </section>
     </>
   )
