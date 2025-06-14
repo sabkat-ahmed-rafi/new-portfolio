@@ -1,2 +1,1 @@
-* react bits ar particles deoya lagbe first layout a.
-* then ar porer layout a jhir jhir effect use korbo.
+* Now I have to make the first section responsive.
