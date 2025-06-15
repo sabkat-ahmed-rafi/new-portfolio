@@ -29,12 +29,12 @@ const sectionRef = useRef<HTMLElement>(null);
         className='flex flex-col lg:flex-row justify-between text-center text-[#F7939D] min-h-screen' 
         style={{background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #F7939D 350%)"}} 
         >
-            <div className={`md:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable}`} style={{ fontFamily: 'var(--font-anton)' }} >
+            <div className={`md:text-[165px] lg:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable}`} style={{ fontFamily: 'var(--font-anton)' }} >
               <h1>SABKAT</h1>
               <h1>AHMED</h1>
               <h1>RAFI</h1>
             </div>
-            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 md:pb-10'
+            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 pb-3 lg:pb-10'
             style={{zIndex: '2'}}
             >
             <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>
