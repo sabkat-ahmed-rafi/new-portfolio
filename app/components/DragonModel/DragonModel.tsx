@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { AnimationMixer, Mesh, MeshStandardMaterial, Group } from "three";
@@ -20,6 +20,29 @@ const Model = () => {
   const {scene, animations} = useGLTF("/dragon/source/dragon.glb");
   const mixer = useRef<AnimationMixer>();
   const dragonRef = useRef<Group>(null);
+  const [modelPosition, setModelPosition] = useState<[number, number, number]>([-0.5, -1.5, 1]);
+  const [modelRotation, setModelRotation] = useState<[number, number, number]>([0, -0.7, 0]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+      const isDesktop = window.innerWidth >= 1024;
+      if (isMobile) {
+        setModelPosition([-0.5, -1.5, 1]); 
+      } else if(isTablet) {
+        setModelPosition([2.5, -1.5, 1]); 
+        setModelRotation([0, -1.3, 0])
+      } else if(isDesktop) {
+        setModelPosition([-0.5, -1.5, 1]);
+      }
+    };
+
+    handleResize(); // Run on mount
+    window.addEventListener("resize", handleResize); // Listen to resize
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [])
 
   useEffect(() => {
 
@@ -72,6 +95,12 @@ const Model = () => {
     // Giving my own animation with gsap
     if (dragonRef.current) {
 
+      dragonRef.current.rotation.set(
+       modelRotation[0],
+       modelRotation[1],
+       modelRotation[2]
+      );
+
       // Rotating (Idle Rotating) Animation  
       gsap.to(dragonRef.current.rotation, {
         y: dragonRef.current.rotation.y + Math.PI * 2,
@@ -107,7 +136,7 @@ const Model = () => {
     return () => {
       mixer.current?.stopAllAction();
     };
-  }, [animations, scene])
+  }, [animations, scene, modelRotation])
 
   useFrame((_, delta) => {
     mixer.current?.update(delta);
@@ -118,8 +147,8 @@ const Model = () => {
     ref={dragonRef}
     object={scene}
     scale={0.3}
-    position={[-0.5, -1.5, 1]} 
-    rotation={[0, -0.7, 0]} 
+    position={modelPosition} 
+    rotation={modelRotation} 
   />
 );
 };
