@@ -29,15 +29,19 @@ const Model = () => {
     const handleResize = () => {
       const isMobile = window.innerWidth < 768;
       const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-      const isDesktop = window.innerWidth >= 1024;
+      const isDesktop = window.innerWidth >= 1024 && window.innerWidth < 1280;
+      const largeDesktop = window.innerWidth >= 1280;
       if (isMobile) {
         setScale(0.1)
         setModelPosition([0.8, -1.5, 1]);
         setModelRotation([0, -1.3, 0])
       } else if(isTablet) {
-        setModelPosition([2.5, -1.5, 1]); 
+        setModelPosition([1.8, -1.5, 1]); 
         setModelRotation([0, -1.3, 0])
       } else if(isDesktop) {
+        setModelPosition([0.9, -1.5, 1]);
+        setModelRotation([0, -1.1, 0])
+      } else if(largeDesktop) {
         setModelPosition([-0.5, -1.5, 1]);
       }
     };
@@ -158,12 +162,6 @@ const Model = () => {
 );
 };
 
-//   <primitive
-//     object={scene}
-//     scale={0.3}
-//     position={[-0.5, -1.5, 1]} 
-//     rotation={[0, -0.7, 0]} 
-//   />
 
 const DragonModel = () => {
   return (
