@@ -20,16 +20,20 @@ const Model = () => {
   const {scene, animations} = useGLTF("/dragon/source/dragon.glb");
   const mixer = useRef<AnimationMixer>();
   const dragonRef = useRef<Group>(null);
+  const [scale, setScale] = useState(0.3);
   const [modelPosition, setModelPosition] = useState<[number, number, number]>([-0.5, -1.5, 1]);
   const [modelRotation, setModelRotation] = useState<[number, number, number]>([0, -0.7, 0]);
 
   useEffect(() => {
+    // Responsive Position Logic
     const handleResize = () => {
       const isMobile = window.innerWidth < 768;
       const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
       const isDesktop = window.innerWidth >= 1024;
       if (isMobile) {
-        setModelPosition([-0.5, -1.5, 1]); 
+        setScale(0.1)
+        setModelPosition([0.8, -1.5, 1]);
+        setModelRotation([0, -1.3, 0])
       } else if(isTablet) {
         setModelPosition([2.5, -1.5, 1]); 
         setModelRotation([0, -1.3, 0])
@@ -53,7 +57,7 @@ const Model = () => {
         mixer.current?.clipAction(wingsFlying).play();
     }
 
-    // Change materials to pinkish
+    // Change materials color to pinkish
     scene.traverse((child) => {
       if ((child as Mesh).isMesh) {
         const mesh = child as Mesh;
@@ -95,6 +99,7 @@ const Model = () => {
     // Giving my own animation with gsap
     if (dragonRef.current) {
 
+      // Changing the model's rotation based on the device viewport
       dragonRef.current.rotation.set(
        modelRotation[0],
        modelRotation[1],
@@ -146,7 +151,7 @@ const Model = () => {
   <primitive
     ref={dragonRef}
     object={scene}
-    scale={0.3}
+    scale={scale}
     position={modelPosition} 
     rotation={modelRotation} 
   />
