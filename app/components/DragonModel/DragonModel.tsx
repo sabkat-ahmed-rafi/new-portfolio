@@ -91,7 +91,7 @@ const Model = () => {
       // Blackish body
       if (Array.isArray(mesh.material)) {
           mesh.material.forEach((mat) =>
-            applyColor(mat as MeshStandardMaterial, "#F7939D")
+            applyColor(mat as MeshStandardMaterial, "#cfc8cf")
         );
     } else {
         applyColor(mesh.material as MeshStandardMaterial, "#cfc8cf");
@@ -169,7 +169,11 @@ const DragonModel = () => {
       <ambientLight intensity={1.5} />
        <directionalLight position={[0, 0, 5]} />
        <Model />
-      <OrbitControls enableZoom={false} />
+      <OrbitControls
+       enableZoom={false}
+       minPolarAngle={Math.PI / 2}
+       maxPolarAngle={Math.PI / 2}
+       />
     </Canvas>
   );
 };

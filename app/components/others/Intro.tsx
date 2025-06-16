@@ -20,7 +20,91 @@ const Anton = localFont({
 
 const Intro = () => {
 
-const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+
+    // Initial entry animation
+    const tl = gsap.timeline({
+      delay: 1,
+      defaults: { duration: 1.3, ease: "power4.out" }
+    });
+
+    tl.from(".intro-word", {
+      x: "-150vw",
+      rotateY: 720,
+      scale: 3,
+      filter: "blur(20px)",
+      opacity: 0,
+      transformOrigin: "left center",
+      stagger: 0.3,
+    }).to(".intro-word", {
+      scale: 1,
+      rotateY: 0,
+      filter: "blur(0px)",
+      opacity: 1,
+      duration: 0.8,
+      ease: "expo.out",
+      stagger: 0.15,
+    });
+
+  }, []);
+  
+  useGSAP(() => {
+  const words = gsap.utils.toArray(".intro-word");
+
+  const tl = gsap.timeline({
+    delay: 3,
+    defaults: { ease: "power4.out" },
+  });
+
+  // Add shine sweep effect
+  tl.to(
+    words,
+    {
+      color: "#F7939D",
+      textShadow: "0px 0px 20px #F7939D",
+      duration: 1.3,
+      yoyo: true,
+      repeat: 1,
+      stagger: 0.2,
+    },
+    "-=0.6"
+  );
+
+  // Add subtle bounce and glow loop
+  tl.to(
+    words,
+    {
+      y: "+=4",
+      repeat: -1,
+      yoyo: true,
+      duration: 1.5,
+      ease: "sine.inOut",
+      stagger: { each: 0.2, from: "center" },
+    },
+    "+=0.2"
+  );
+
+  }, []);
+
+
+  useGSAP(() => {
+  const buttons = gsap.utils.toArray(".intro-buttons > a");
+
+  gsap.from(buttons, {
+    opacity: 0,
+    y: 100,
+    scale: 0.8,
+    duration: 1,
+    ease: "back.out(1.7)",
+    stagger: 0.2,
+    delay: 2 
+  });
+  }, []);
+
+
 
   return (
     <>
@@ -29,12 +113,14 @@ const sectionRef = useRef<HTMLElement>(null);
         className='flex flex-col lg:flex-row justify-between text-center text-[#F7939D] min-h-screen' 
         style={{background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #F7939D 350%)"}} 
         >
-            <div className={`md:text-[165px] lg:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable}`} style={{ fontFamily: 'var(--font-anton)' }} >
-              <h1>SABKAT</h1>
-              <h1>AHMED</h1>
-              <h1>RAFI</h1>
+            <div 
+            ref={textRef}
+            className={`md:text-[165px] lg:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable}`} style={{ fontFamily: 'var(--font-anton)' }} >
+              <h1 className="intro-word">SABKAT</h1>
+              <h1 className="intro-word">AHMED</h1>
+              <h1 className="intro-word">RAFI</h1>
             </div>
-            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 pb-3 lg:pb-10'
+            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 pb-3 lg:pb-10 intro-buttons'
             style={{zIndex: '2'}}
             >
             <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>

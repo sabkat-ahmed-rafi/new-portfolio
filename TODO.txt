@@ -1,1 +1,1 @@
-* Now I have to make the first section responsive.
+* Now the next section.
