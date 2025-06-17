@@ -67,12 +67,8 @@ export default function Home() {
         <Intro />
       </div>
 
-      <div className="panel h-screen bg-red-500 flex items-center justify-center">
-        <VelocityScroll
-          text="I used to have a life… then I started coding."
-          default_velocity={5}
-          className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-        />
+      <div className="panel h-screen"> 
+        <Projects />
       </div>
 
       <div className="panel h-screen bg-green-500 flex items-center justify-center">
@@ -80,7 +76,6 @@ export default function Home() {
       </div>
 
       <div className="panel h-screen bg-blue-500 flex items-center justify-center">
-        <Projects />
       </div>
 
       <div className="panel h-screen bg-yellow-500 flex items-center justify-center">
