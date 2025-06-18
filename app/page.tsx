@@ -7,7 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Education from "./components/Education/Education";
 import EmailBox from "./components/EmailBox/EmailBox";
 import Footer from "./components/Footer/Footer";
-import { VelocityScroll } from "./components/magicui/scroll-based-velocity";
 import Intro from "./components/others/Intro";
 import Skill from "./components/others/Skill";
 import Projects from "./components/project/Projects";
@@ -43,7 +42,7 @@ export default function Home() {
       // Snapping logic
       ScrollTrigger.create({
         snap: {
-          snapTo: (progress, self) => {
+          snapTo: (_, self) => {
             const panelStarts = tops.map((st) => st.start);
             const scrollValue = self?.scroll ? self.scroll() : 0;
             const snapScroll = gsap.utils.snap(panelStarts, scrollValue);
