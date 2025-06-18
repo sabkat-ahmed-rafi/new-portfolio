@@ -57,8 +57,7 @@ const Projects = () => {
     >    
       <h1 
         ref={titleRef}
-        className='font-extrabold text-white text-6xl text-center py-10'
-      >
+        className='font-extrabold text-white text-6xl text-center py-10'>
         Projects
       </h1>
 
@@ -67,7 +66,9 @@ const Projects = () => {
           <Project {...projectQuantumDoc} />
         </div>
       </section>
-
+      <p className='text-3xl text-white text-center absolute bottom-10'>
+        I believe in quality over quantity — that’s why I focus on building meaningful, real-world apps. QuantumDocs is the first step, and many more are on the way.
+      </p>
       <SplashCursor />
     </section>
   );
