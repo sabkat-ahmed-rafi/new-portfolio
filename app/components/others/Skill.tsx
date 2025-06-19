@@ -7,7 +7,7 @@ const Skill = () => {
     <section
     className="min-h-screen bg-repeat text-white bg-black">
       <h1 className='md:text-6xl text-xl font-extrabold text-center py-10'>Skills</h1>
-<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 place-items-center gap-4">
+<div className="flex justify-center items-center flex-wrap gap-1">
     {[
   "https://img.shields.io/badge/C++-F7939D?style=for-the-badge&logo=cplusplus&logoColor=white",
   "https://img.shields.io/badge/HTML5-F7939D?style=for-the-badge&logo=html5&logoColor=white",
@@ -32,7 +32,7 @@ const Skill = () => {
         key={idx}
         src={src}
         alt="skill"
-        className="h-10 max-w-[250px] object-contain"
+        className="h-10 md:max-w-[250px] object-contain"
       />
     ))}
   </div>
