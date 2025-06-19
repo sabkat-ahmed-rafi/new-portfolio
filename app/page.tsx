@@ -72,11 +72,11 @@ export default function Home() {
         <Projects />
       </div>
 
-      <div className="panel h-screen bg-white flex items-center justify-center">
+      <div className="panel h-screen">
         <AboutMe />
       </div>
 
-      <div className="panel h-screen bg-green-500 flex items-center justify-center">
+      <div className="panel h-screen">
         <Skill />
       </div>
 
