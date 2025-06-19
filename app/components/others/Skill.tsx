@@ -28,7 +28,7 @@ const slugs = [
 
 const Skill = () => {
   return (
-    <section className='md:mx-[85px] mx-[5px] lg:mt-[150px] mt-10 pb-[100px] '>
+    <section className='md:mx-[85px] mx-[5px] lg:mt-[150px] mt-10 pb-[100px] max-h-screen overflow-y-auto'>
       <h1 className='md:text-3xl text-xl font-extrabold visible md:invisible text-slate-700'>Skills</h1>
       <div className='flex md:flex-row flex-col justify-between md:gap-6 items-center'>
       <h1 className='md:text-3xl text-xl font-extrabold invisible md:visible text-slate-700'>Skills</h1>

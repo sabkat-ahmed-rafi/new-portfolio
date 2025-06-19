@@ -10,6 +10,8 @@ import Footer from "./components/Footer/Footer";
 import Intro from "./components/others/Intro";
 import Skill from "./components/others/Skill";
 import Projects from "./components/project/Projects";
+import AboutMe from "./components/AboutMe/AboutMe";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,6 +70,10 @@ export default function Home() {
 
       <div className="panel h-screen"> 
         <Projects />
+      </div>
+
+      <div className="panel h-screen bg-white flex items-center justify-center">
+        <AboutMe />
       </div>
 
       <div className="panel h-screen bg-green-500 flex items-center justify-center">

@@ -12,7 +12,7 @@ const Project = (projectProps : ProjectProps) => {
   return (
     <>
             <ShineBorder
-              className="relative flex flex-col md:w-[400px] items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl space-y-2 bg-black text-white"
+              className="relative flex flex-col w-[300px] md:w-[400px] items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl space-y-2 bg-black text-white"
               color={["#FFFFFF", "#090909", "#383B43"]}
             >
              <h1 className='font-extrabold text-xl'>{projectProps.name}</h1>
