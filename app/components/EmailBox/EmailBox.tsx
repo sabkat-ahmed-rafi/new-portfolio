@@ -36,39 +36,47 @@ const EmailBox = () => {
               console.log('FAILED...', error.text);
             },
           );
-      };
+    };
 
   return (
     <>
-       <section className='pb-[50px]'>
-       <div className="grid max-w-screen-xl items-center grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 shadow-lg shadow-slate-300 ">
-	<div className="flex flex-col justify-between items-left">
-		<div className="space-y-2 lg:pl-14">
-			<h2 className="text-4xl font-extrabold font-lilita leading-tight lg:text-5xl">Let&apos;s talk!</h2>
-			<div className="dark:text-gray-600 text-slate-700">Connect with me through a message.</div>
-		</div>
+    <section className='min-h-screen bg-black text-[#F7939D] flex justify-center items-center'>
+      
+      <div className="grid max-w-screen-xl items-center grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-28 px-8 py-8 md:py-16 mx-auto md:px-12 lg:px-16 xl:px-32 xl:shadow-xl border rounded-2xl">
 
-	</div>
-	<form ref={form} onSubmit={sendEmail} className="space-y-6">
-		<div>
-			<label htmlFor="name" className="text-sm font-semibold">Full name</label>
-			<input onChange={(e) => setName(e.target.value)}  type="text" name='user_name' placeholder="" value={name} className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300" />
-		</div>
-		<div>
-			<label htmlFor="email" className="text-sm font-semibold">Email</label>
-			<input onChange={(e) => setEmail(e.target.value)} value={email} type="email" name='user_email' className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300" />
-		</div>
-		<div>
-			<label htmlFor="message" className="text-sm font-semibold">Message</label>
-			<textarea onChange={(e) => setMessage(e.target.value)} value={message} name='message' rows={3} className="w-full p-3 rounded dark:bg-gray-100 border border-slate-300"></textarea>
-		</div>
-		<button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:text-gray-50 border border-slate-300 bg-slate-950 text-white hover:border hover:border-slate-950 hover:bg-white hover:text-slate-950 hover:tracking-[3px] transition-all ">Send Message</button>
-	</form>
-        </div>  
-       </section>
-       <Toaster   
-       position="bottom-right"
-       reverseOrder={true} />
+	      <div className="flex flex-col justify-between items-left">
+		      <div className="space-y-2 lg:pl-14">
+			      <h2 className="text-4xl font-extrabold font-lilita leading-tight lg:text-5xl">
+              Let&apos;s talk!      
+            </h2>
+			      <div>Connect with me through a message.</div>
+		      </div>
+	      </div>
+
+	      <form ref={form} onSubmit={sendEmail} className="space-y-3 md:space-y-6 ">
+		      <div>
+			      <label htmlFor="name" className="text-sm font-semibold">Full name</label>
+			      <input onChange={(e) => setName(e.target.value)}  type="text" name='user_name' placeholder="" value={name} className="w-full xl:h-[70px] p-3 rounded border border-[#F7939D] text-black" />
+		      </div>
+		      <div>
+			      <label htmlFor="email" className="text-sm font-semibold">Email</label>
+			      <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" name='user_email' className="w-full p-3 rounded dark:bg-gray-100 border border-[#F7939D] text-black" />
+		      </div>
+		      <div>
+			      <label htmlFor="message" className="text-sm font-semibold">Message</label>
+			      <textarea onChange={(e) => setMessage(e.target.value)} value={message} name='message' rows={3} className="w-full p-3 rounded dark:bg-gray-100 border border-[#F7939D] text-black"></textarea>
+		      </div>
+		      <button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:text-gray-50 border border-slate-300 bg-[#F7939D] text-black hover:border hover:border-slate-950 hover:bg-white hover:text-slate-950 hover:tracking-[3px] transition-all">Send Message</button>
+	      </form>
+
+      </div>  
+
+    </section>
+
+    <Toaster   
+      position="bottom-right"
+      reverseOrder={true}
+    />
     </>
   )
 }

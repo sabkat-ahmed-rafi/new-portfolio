@@ -64,6 +64,7 @@ export default function Home() {
 
   return (
     <section ref={containerRef}>
+      
       <div className="panel h-screen">
         <Intro />
       </div>
@@ -84,13 +85,10 @@ export default function Home() {
         <Education />
       </div>
 
-      <div className="panel h-screen bg-pink-500 flex items-center justify-center">
+      <div className="panel h-screen">
         <EmailBox />
       </div>
 
-      <div className="panel h-screen bg-purple-500 flex items-center justify-center">
-        <Footer />
-      </div>
     </section>
   );
 }
