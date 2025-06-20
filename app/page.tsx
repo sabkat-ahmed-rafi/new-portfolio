@@ -80,10 +80,7 @@ export default function Home() {
         <Skill />
       </div>
 
-      <div className="panel h-screen bg-blue-500 flex items-center justify-center">
-      </div>
-
-      <div className="panel h-screen bg-yellow-500 flex items-center justify-center">
+      <div className="panel h-screen">
         <Education />
       </div>
 
