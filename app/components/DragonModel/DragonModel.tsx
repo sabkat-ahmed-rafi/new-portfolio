@@ -10,7 +10,7 @@ import gsap from "gsap";
 
 useGLTF.preload("/dragon/source/dragon.glb");
 
-const Model = () => {
+const Model = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
   const {scene, animations} = useGLTF("/dragon/source/dragon.glb");
   const mixer = useRef<AnimationMixer>();
   const dragonRef = useRef<Group>(null);
@@ -136,6 +136,8 @@ const Model = () => {
 
     }
 
+    onModelLoaded();
+
     return () => {
       mixer.current?.stopAllAction();
     };
@@ -157,12 +159,12 @@ const Model = () => {
 };
 
 
-const DragonModel = () => {
+const DragonModel = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
   return (
     <Canvas style={{ width: "100%", height: "100%" }}>
       <ambientLight intensity={1} />
        <directionalLight />
-       <Model />
+       <Model onModelLoaded={onModelLoaded} />
       <OrbitControls
        enableZoom={false}
        minPolarAngle={Math.PI / 2}

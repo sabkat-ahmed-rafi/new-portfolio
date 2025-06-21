@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import ShimmerButton2 from "@/components/magicui/shimmer-button2";
 import { gsap } from "gsap";
@@ -18,12 +18,22 @@ const Anton = localFont({
   weight: "400"
 })
 
-const Intro = () => {
+const Intro = ({
+  startAnimation,
+  onIntroReady,
+  onModelLoaded
+}: {
+  startAnimation: boolean;
+  onIntroReady: () => void;
+  onModelLoaded: () => void;
+}) => {
 
   const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+
+    if (!startAnimation) return;
 
     // Initial entry animation
     const tl = gsap.timeline({
@@ -49,9 +59,12 @@ const Intro = () => {
       stagger: 0.15,
     });
 
-  }, []);
+  }, [startAnimation]);
   
   useGSAP(() => {
+  
+    if (!startAnimation) return;
+
   const words = gsap.utils.toArray(".intro-word");
 
   const tl = gsap.timeline({
@@ -87,10 +100,12 @@ const Intro = () => {
     "+=0.2"
   );
 
-  }, []);
-
+  }, [startAnimation]);
 
   useGSAP(() => {
+
+  if (!startAnimation) return;
+
   const buttons = gsap.utils.toArray(".intro-buttons > a");
 
   gsap.from(buttons, {
@@ -102,9 +117,11 @@ const Intro = () => {
     stagger: 0.2,
     delay: 2 
   });
+  }, [startAnimation]);
+
+  useEffect(() => {
+    onIntroReady(); // notify Home that Intro has mounted
   }, []);
-
-
 
   return (
     <>
@@ -115,12 +132,12 @@ const Intro = () => {
         >
             <div 
             ref={textRef}
-            className={`md:text-[165px] lg:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable}`} style={{ fontFamily: 'var(--font-anton)' }} >
+            className={`md:text-[165px] lg:text-[200px] text-[130px] text-left max-w-full leading-none select-none ${Anton.variable} ${!startAnimation && 'invisible'}`} style={{ fontFamily: 'var(--font-anton)' }} >
               <h1 className="intro-word">SABKAT</h1>
               <h1 className="intro-word">AHMED</h1>
               <h1 className="intro-word">RAFI</h1>
             </div>
-            <div className='md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 pb-3 lg:pb-10 intro-buttons'
+            <div className={`md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 pb-3 lg:pb-10 intro-buttons ${!startAnimation && 'invisible'}`}
             style={{zIndex: '2'}}
             >
             <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>
@@ -156,7 +173,7 @@ const Intro = () => {
             />
         </div>
         <div style={{ width: "100%", height: "100vh", position: "absolute", zIndex: 1 }}>
-          <DragonModel />
+          <DragonModel onModelLoaded={onModelLoaded}  />
         </div>
 
       </section>

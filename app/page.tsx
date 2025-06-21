@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,12 +10,18 @@ import Intro from "./components/others/Intro";
 import Skill from "./components/others/Skill";
 import Projects from "./components/project/Projects";
 import AboutMe from "./components/AboutMe/AboutMe";
+import Preloader from "./components/Preloader/Preloader";
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const containerRef = useRef<HTMLElement>(null);
+    const [modelLoaded, setModelLoaded] = useState(false);
+  const [introReady, setIntroReady] = useState(false);
+  const [preloaderDone, setPreloaderDone] = useState(false);
+
+  const allReady = modelLoaded && introReady;
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -62,10 +68,19 @@ export default function Home() {
   }, []);
 
   return (
+    <>
+    <Preloader
+      hide={allReady}
+      onHidden={() => setPreloaderDone(true)} // ✅ this triggers the start of animations
+    />
+
     <section ref={containerRef}>
       
       <div className="panel h-screen">
-        <Intro />
+        <Intro 
+        startAnimation={preloaderDone}
+        onIntroReady={() => setIntroReady(true)}
+        onModelLoaded={() => setModelLoaded(true)} />
       </div>
 
       <div className="panel h-screen"> 
@@ -89,5 +104,6 @@ export default function Home() {
       </div>
 
     </section>
+    </>
   );
 }

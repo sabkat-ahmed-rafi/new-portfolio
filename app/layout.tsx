@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Preloader from "./components/Preloader/Preloader";
+// import Preloader from "./components/Preloader/Preloader";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +29,6 @@ export default function RootLayout( { children }: Readonly<{ children: React.Rea
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         {children}
-        <Preloader />
       </body>
     </html>
   );

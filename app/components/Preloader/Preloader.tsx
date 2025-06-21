@@ -1,25 +1,33 @@
-'use client';
+"use client";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-const Preloader = () => {
+const Preloader = ({
+  hide,
+  onHidden,
+}: {
+  hide: boolean;
+  onHidden: () => void;
+}) => {
   const preloaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      delay: 0.5,
-      onComplete: () => {
-        // Remove the preloader after sliding up
-        gsap.set(preloaderRef.current, { display: 'none' });
-      },
-    });
+    console.log(hide)
+    if (hide) {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          gsap.set(preloaderRef.current, { display: 'none' });
+          onHidden(); // ✅ tell parent that preloader is gone
+        },
+      });
 
-    tl.to(preloaderRef.current, {
-      y: '-100%',
-      duration: 0.5,
-      ease: 'power2.inOut',
-    });
-  }, []);
+      tl.to(preloaderRef.current, {
+        y: '-100%',
+        duration: 0.5,
+        ease: 'power2.inOut',
+      });
+    }
+  }, [hide]);
 
   return (
     <div
