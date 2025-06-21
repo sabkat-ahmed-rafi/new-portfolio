@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { AnimationMixer, Mesh, MeshStandardMaterial, Group } from "three";
+import { AnimationMixer, Mesh, MeshStandardMaterial, Group, Object3D } from "three";
 import gsap from "gsap";
 
 declare global {
@@ -62,7 +62,7 @@ const Model = () => {
     }
 
     // Change materials color to pinkish
-    scene.traverse((child) => {
+    scene.traverse((child: Object3D) => {
       if ((child as Mesh).isMesh) {
         const mesh = child as Mesh;
     const applyColor = (material: MeshStandardMaterial, color: string) => {
@@ -73,8 +73,8 @@ const Model = () => {
       }  
 
       material.color.set(color);
-      material.roughness = 0.6;
-      material.metalness = 0.3;
+      material.roughness = 1;
+      material.metalness = 0.4;
     };
 
     // Detect wings or body by mesh name
@@ -166,8 +166,8 @@ const Model = () => {
 const DragonModel = () => {
   return (
     <Canvas style={{ width: "100%", height: "100%" }}>
-      <ambientLight intensity={1.5} />
-       <directionalLight position={[0, 0, 5]} />
+      <ambientLight intensity={1} />
+       <directionalLight />
        <Model />
       <OrbitControls
        enableZoom={false}
