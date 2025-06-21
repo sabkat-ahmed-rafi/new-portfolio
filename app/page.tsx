@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Education from "./components/Education/Education";
 import EmailBox from "./components/EmailBox/EmailBox";
-import Footer from "./components/Footer/Footer";
 import Intro from "./components/others/Intro";
 import Skill from "./components/others/Skill";
 import Projects from "./components/project/Projects";

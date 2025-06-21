@@ -6,13 +6,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import { AnimationMixer, Mesh, MeshStandardMaterial, Group, Object3D } from "three";
 import gsap from "gsap";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      primitive: any;
-    }
-  }
-}
+
 
 useGLTF.preload("/dragon/source/dragon.glb");
 
