@@ -35,7 +35,7 @@ const AboutMe = () => {
       <div className='w-full h-screen flex justify-center items-center'> 
         <img
          className='object-cover select-none pointer-events-none w-[80%] h-[90%] rounded-3xl border-4' 
-         src="/images/rafi.jpg" 
+         src="/images/rafi.JPG" 
          alt="sabkat ahmed rafi" 
          onContextMenu={(e) => e.preventDefault()}
          />
