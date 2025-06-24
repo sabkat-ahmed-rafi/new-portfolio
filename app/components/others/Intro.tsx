@@ -176,9 +176,9 @@ const Intro = ({
           <DragonModel onModelLoaded={onModelLoaded}  />
         </div>
 
+      <div style={{zIndex: "1", width: "100%", height: "100vh", position: "absolute"}}></div>
 
       </section>
-      <div style={{zIndex: "2", width: "100%", height: "100vh"}}></div>
     </>
   )
 }
