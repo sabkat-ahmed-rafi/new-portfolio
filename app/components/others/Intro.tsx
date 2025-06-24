@@ -160,7 +160,7 @@ const Intro = ({
             </a>
             </div>
         <MouseRing parentRef={sectionRef} />
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0, pointerEvents: 'none' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0 }}>
           <Particles
             particleColors={['#f7939d']}
             particleCount={500}
@@ -172,11 +172,13 @@ const Intro = ({
             disableRotation={false}
             />
         </div>
-        <div style={{ width: "100%", height: "100vh", position: "absolute", zIndex: 1, pointerEvents: 'none' }}>
+        <div style={{ width: "100%", height: "100vh", position: "absolute", zIndex: 1 }}>
           <DragonModel onModelLoaded={onModelLoaded}  />
         </div>
 
+
       </section>
+      <div style={{zIndex: 2, width: "100%", height: "100vh"}}></div>
     </>
   )
 }
