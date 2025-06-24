@@ -48,6 +48,8 @@ const Model = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
 
   useEffect(() => {
 
+    const isMobile = window.innerWidth < 768;
+
     // Giving prebuilt animation
     if(animations.length) {
         mixer.current = new AnimationMixer(scene);
@@ -95,7 +97,7 @@ const Model = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
     });
 
     // Giving my own animation with gsap
-    if (dragonRef.current) {
+    if (!isMobile && dragonRef.current) {
 
       // Changing the model's rotation based on the device viewport
       dragonRef.current.rotation.set(
@@ -160,8 +162,27 @@ const Model = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
 
 
 const DragonModel = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      setIsMobile(isMobile);
+    };
+
+    handleResize(); // run on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   return (
-    <Canvas style={{ width: "100%", height: "100%" }}>
+    <Canvas 
+     dpr={isMobile ? 1 : [1, 2]} 
+     gl={{ antialias: !isMobile }} 
+     style={{ width: "100%", height: "100%" }}>
       <ambientLight intensity={1} />
        <directionalLight />
        <Model onModelLoaded={onModelLoaded} />
