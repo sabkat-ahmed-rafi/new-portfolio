@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import ShimmerButton2 from "@/components/magicui/shimmer-button2";
 import { gsap } from "gsap";
@@ -30,6 +30,19 @@ const Intro = ({
 
   const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => {
+        const isMobile = window.innerWidth < 768;
+        setIsMobile(isMobile);
+      };
+  
+      handleResize(); // run on mount
+      window.addEventListener("resize", handleResize);
+  
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   useGSAP(() => {
 
@@ -163,7 +176,7 @@ const Intro = ({
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0 }}>
           <Particles
             particleColors={['#f7939d']}
-            particleCount={500}
+            particleCount={isMobile ? 200 : 500}
             particleSpread={10}
             speed={0.3}
             particleBaseSize={100}
