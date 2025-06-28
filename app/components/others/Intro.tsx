@@ -162,7 +162,7 @@ const Intro = ({
                </ShimmerButton>
               </div>
             </a>
-            <a href="https://drive.google.com/file/d/1SJHuo9RgJSV5HN1uamLQ13SLwQnExjk7/view?usp=drive_link" target='_blank'>
+            <a href="https://drive.google.com/file/d/12APytw5fsWVyoLme4MTgZoHhRdTg9YAU/view?usp=sharing" target='_blank'>
               <div className='border-2 border-[#f7939d] inline-block ml-24 sm:ml-0'>
                 <ShimmerButton2 className="shadow-2xl mx-auto lg:mx-0">
                 <span className="whitespace-pre-wrap text-center font-extrabold leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
