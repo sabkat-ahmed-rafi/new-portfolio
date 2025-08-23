@@ -46,7 +46,7 @@ const MouseRing = ({ parentRef }: MouseRingProps) => {
   return (
     <div
       ref={ringRef}
-      className="pointer-events-none absolute top-0 left-0 z-[9999] w-10 h-10 border border-[#f7939d] rounded-full overflow-hidden"
+      className="pointer-events-none absolute top-0 left-0 z-[9999] w-10 h-10 border border-[#f7939d] rounded-full overflow-hidden hidden md:flex"
     />
   );
 };
