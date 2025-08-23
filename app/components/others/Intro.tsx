@@ -84,6 +84,7 @@ const Intro = ({
   
   useGSAP(() => {
   
+    if(isMobile) return
     if (!startAnimation) return;
 
   const words = gsap.utils.toArray(".intro-word");
@@ -107,7 +108,6 @@ const Intro = ({
     "-=0.6"
   );
 
-  if(isMobile) return
   // Add subtle bounce and glow loop
   tl.to(
     words,
