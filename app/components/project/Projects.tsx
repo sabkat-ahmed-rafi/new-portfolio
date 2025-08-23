@@ -66,7 +66,7 @@ const Projects = () => {
           <Project {...projectQuantumDoc} />
         </div>
       </section>
-      <p className='md:text-3xl text-xl text-white text-center absolute bottom-10'>
+      <p className='md:text-3xl text-xl text-white text-center absolute bottom-10 hidden md:flex'>
         I believe in quality over quantity — that’s why I focus on building meaningful, real-world apps. QuantumDocs is the first step, and many more are on the way.
       </p>
       <SplashCursor />
