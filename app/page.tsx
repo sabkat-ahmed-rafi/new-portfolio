@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -19,11 +19,24 @@ export default function Home() {
   const [modelLoaded, setModelLoaded] = useState(false);
   const [introReady, setIntroReady] = useState(false);
   const [preloaderDone, setPreloaderDone] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const allReady = modelLoaded && introReady;
+    useEffect(() => {
+      const handleResize = () => {
+        const isMobile = window.innerWidth < 768;
+          setIsMobile(isMobile);
+      };
+    
+      handleResize(); 
+      window.addEventListener("resize", handleResize);
+    
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   useLayoutEffect(() => {
-    if (!containerRef.current) return;
+    
+    if (!containerRef.current || isMobile) return;
 
     const panels = gsap.utils.toArray<HTMLElement>(".panel");
     const totalPanels = panels.length;
@@ -49,7 +62,7 @@ export default function Home() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [isMobile]);
 
   return (
     <>
@@ -58,7 +71,7 @@ export default function Home() {
         onHidden={() => setPreloaderDone(true)} // triggers the start of Intro animations
       />
 
-      <section ref={containerRef} className="relative h-screen overflow-hidden">
+      <section ref={containerRef} className={isMobile ? "relative h-auto" : "relative h-screen overflow-hidden"} >
         <div className="panel h-screen">
           <Intro
             startAnimation={preloaderDone}
