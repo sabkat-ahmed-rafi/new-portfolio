@@ -32,17 +32,24 @@ const Intro = ({
   const textRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-      const handleResize = () => {
-        const isMobile = window.innerWidth < 768;
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
         setIsMobile(isMobile);
-      };
+    };
   
-      handleResize(); // run on mount
-      window.addEventListener("resize", handleResize);
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
   
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      onModelLoaded(); 
+    }
+  }, [isMobile, onModelLoaded]);
+
 
   useGSAP(() => {
 
@@ -187,7 +194,9 @@ const Intro = ({
             disableRotation={false}
             />
         </div>
-        <div style={{ width: "100%", height: "100vh", position: "absolute", zIndex: 1 }}>
+        <div 
+        className='hidden md:flex'
+        style={{ width: "100%", height: "100vh", position: "absolute", zIndex: 1 }}>
           <DragonModel onModelLoaded={onModelLoaded}  />
         </div>
 
