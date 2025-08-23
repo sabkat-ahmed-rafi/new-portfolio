@@ -173,7 +173,9 @@ const Intro = ({
             </a>
             </div>
         <MouseRing parentRef={sectionRef} />
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0 }}>
+        <div 
+        className='hidden md:flex'
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0 }} >
           <Particles
             particleColors={['#f7939d']}
             particleCount={isMobile ? 200 : 500}
