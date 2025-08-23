@@ -160,11 +160,12 @@ const Intro = ({
               <h1 className="intro-word">AHMED</h1>
               <h1 className="intro-word">RAFI</h1>
             </div>
-            <div className={`md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 pb-3 lg:pb-10 intro-buttons ${!startAnimation && 'invisible'}`}
+            <div className={`md:self-end md:flex md:flex-row flex-col md:space-x-6 space-x-1 md:mr-2 lg:mr-3 pb-3 lg:pb-10 intro-buttons gap-5 ${!startAnimation && 'invisible'}`}
             style={{zIndex: '2'}}
             >
             <a href="/files/Sabkat_Ahmed_Rafi_Resume.pdf" download="Sabkat_Ahmed_Rafi_Resume.pdf" target='_blank'>
-              <div className='border-2 inline-block mb-3 sm:mb-0 mr-24 sm:mr-0'>
+              <button className='shadow__btn mb-5 md:hidden inline-block'>Download Resume</button>
+              <div className='border-2 md:inline-block hidden mb-3 sm:mb-0 mr-24 sm:mr-0 '>
                <ShimmerButton className="shadow-2xl mx-auto lg:mx-0">
                <span className="whitespace-pre-wrap text-center font-extrabold leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
                 Download Resume
@@ -173,7 +174,8 @@ const Intro = ({
               </div>
             </a>
             <a href="https://drive.google.com/file/d/12APytw5fsWVyoLme4MTgZoHhRdTg9YAU/view?usp=sharing" target='_blank'>
-              <div className='border-2 border-[#f7939d] inline-block ml-24 sm:ml-0'>
+              <button className='shadow__btn mb-4 md:hidden inline-block'>Preview Resume</button>
+              <div className='border-2 border-[#f7939d] md:inline-block hidden ml-24 sm:ml-0'>
                 <ShimmerButton2 className="shadow-2xl mx-auto lg:mx-0">
                 <span className="whitespace-pre-wrap text-center font-extrabold leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
                  Preview Resume
