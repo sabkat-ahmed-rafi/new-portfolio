@@ -53,6 +53,7 @@ const Intro = ({
 
   useGSAP(() => {
 
+    if(isMobile) return
     if (!startAnimation) return;
 
     // Initial entry animation
@@ -106,6 +107,7 @@ const Intro = ({
     "-=0.6"
   );
 
+  if(isMobile) return
   // Add subtle bounce and glow loop
   tl.to(
     words,
@@ -124,6 +126,7 @@ const Intro = ({
 
   useGSAP(() => {
 
+  if(isMobile) return
   if (!startAnimation) return;
 
   const buttons = gsap.utils.toArray(".intro-buttons > a");
