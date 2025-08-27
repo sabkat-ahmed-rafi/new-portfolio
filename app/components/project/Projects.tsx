@@ -51,7 +51,7 @@ const Projects = () => {
   const projectCryptonism = {
     name: "Cryptonism",
     description: "End-to-end encryption library for browser to secure authentication and sensitive data with zero-knowledge architecture",
-    liveLink: "cryptonism.vercel.app",
+    liveLink: "https://cryptonism.vercel.app",
     githubLink: "https://github.com/sabkat-ahmed-rafi/cryptonism"
   };
 
