@@ -12,7 +12,6 @@ const Preloader = ({
   const preloaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log(hide)
     if (hide) {
       const tl = gsap.timeline({
         onComplete: () => {

@@ -2,7 +2,6 @@
 
 import React, { useRef, useLayoutEffect } from 'react';
 import Project from './Project';
-import SplashCursor from '../SplashCursor/SplashCursor';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -49,11 +48,18 @@ const Projects = () => {
     githubLink: "https://github.com/sabkat-ahmed-rafi/QuantumDocs"
   };
 
+  const projectCryptonism = {
+    name: "Cryptonism",
+    description: "End-to-end encryption library for browser to secure authentication and sensitive data with zero-knowledge architecture",
+    liveLink: "cryptonism.vercel.app",
+    githubLink: "https://github.com/sabkat-ahmed-rafi/cryptonism"
+  };
+
   return (
     <section 
       ref={containerRef}
-      className='min-h-screen'
-      style={{background: "linear-gradient(to bottom, #000000 0%, #000000 55%, #ffffff 550%)"}}
+      className='min-h-screen max-h-full overflow-y-auto bg-black'
+      
     >    
       <h1 
         ref={titleRef}
@@ -61,15 +67,14 @@ const Projects = () => {
         Projects
       </h1>
 
-      <section className='flex flex-col justify-center items-center bg-black space-y-5'>
+      <section className='flex justify-center items-center flex-col md:flex-row flex-wrap gap-5 mb-5'>
         <div ref={projectRef}>
           <Project {...projectQuantumDoc} />
         </div>
+        <div ref={projectRef}>
+          <Project {...projectCryptonism} />
+        </div>
       </section>
-      <p className='md:text-3xl text-xl text-white text-center absolute bottom-10 hidden md:flex'>
-        I believe in quality over quantity — that’s why I focus on building meaningful, real-world apps. QuantumDocs is the first step, and many more are on the way.
-      </p>
-      <SplashCursor />
     </section>
   );
 };
