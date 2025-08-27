@@ -21,15 +21,10 @@ const Model = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
   useEffect(() => {
     // Responsive Position Logic
     const handleResize = () => {
-      const isMobile = window.innerWidth < 768;
       const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
       const isDesktop = window.innerWidth >= 1024 && window.innerWidth < 1280;
       const largeDesktop = window.innerWidth >= 1280;
-      if (isMobile) {
-        setScale(0.1)
-        setModelPosition([0.8, -1.5, 1]);
-        setModelRotation([0, -1.3, 0])
-      } else if(isTablet) {
+      if(isTablet) {
         setModelPosition([1.8, -1.5, 1]); 
         setModelRotation([0, -1.3, 0])
       } else if(isDesktop) {
@@ -47,8 +42,6 @@ const Model = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
   }, [])
 
   useEffect(() => {
-
-    const isMobile = window.innerWidth < 768;
 
     // Giving prebuilt animation
     if(animations.length) {
@@ -97,7 +90,7 @@ const Model = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
     });
 
     // Giving my own animation with gsap
-    if (!isMobile && dragonRef.current) {
+    if (dragonRef.current) {
 
       // Changing the model's rotation based on the device viewport
       dragonRef.current.rotation.set(
@@ -163,25 +156,8 @@ const Model = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
 
 const DragonModel = ({ onModelLoaded }: { onModelLoaded: () => void }) => {
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const isMobile = window.innerWidth < 768;
-      setIsMobile(isMobile);
-    };
-
-    handleResize(); // run on mount
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-
   return (
     <Canvas 
-     dpr={isMobile ? 1 : [1, 2]} 
-     gl={{ antialias: !isMobile }} 
      style={{ width: "100%", height: "100%" }}>
       <ambientLight intensity={1} />
        <directionalLight />
