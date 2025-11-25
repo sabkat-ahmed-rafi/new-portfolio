@@ -173,7 +173,7 @@ const Intro = ({
                </ShimmerButton>
               </div>
             </a>
-            <a href="https://drive.google.com/file/d/12APytw5fsWVyoLme4MTgZoHhRdTg9YAU/view?usp=sharing" target='_blank'>
+            <a href="https://drive.google.com/file/d/12Iv3lM37i0EF7uL0EqwWihIjl7kRgyxf/view?usp=sharing" target='_blank'>
               <button className='shadow__btn mb-4 md:hidden inline-block'>Preview Resume</button>
               <div className='border-2 border-[#f7939d] md:inline-block hidden ml-24 sm:ml-0'>
                 <ShimmerButton2 className="shadow-2xl mx-auto lg:mx-0">

@@ -5,7 +5,7 @@ interface ProjectProps {
   name: string;
   description: string;
   liveLink: string;
-  githubLink: string;
+  githubLink?: string;
 }
 
 const Project = (projectProps : ProjectProps) => {
@@ -19,7 +19,9 @@ const Project = (projectProps : ProjectProps) => {
              <p className='text-center'>{projectProps.description}</p>
              <div className='flex space-x-3 font-semibold'>
              <p className='hover:underline hover:text-blue-700'><a href={projectProps.liveLink} target='_blank'>Live</a></p>
-             <p className='hover:underline hover:text-blue-700'><a href={projectProps.githubLink} target='_blank'>GitHub</a></p>
+             {
+              projectProps.githubLink && <p className='hover:underline hover:text-blue-700'><a href={projectProps.githubLink} target='_blank'>GitHub</a></p>
+             }
              </div>
             </ShineBorder>
     </>

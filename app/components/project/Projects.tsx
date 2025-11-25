@@ -43,7 +43,7 @@ const Projects = () => {
 
   const projectQuantumDoc = {
     name: "QuantumDocs",
-    description: "QuantumDoc is a real-time collaborative document editor, similar to Google Docs..",
+    description: "QuantumDoc is a real-time collaborative document editor, similar to Google Docs",
     liveLink: "https://quantum-docs-frontend.vercel.app",
     githubLink: "https://github.com/sabkat-ahmed-rafi/QuantumDocs"
   };
@@ -54,6 +54,12 @@ const Projects = () => {
     liveLink: "https://cryptonism.vercel.app",
     githubLink: "https://github.com/sabkat-ahmed-rafi/cryptonism"
   };
+
+  const projectFrontendArk = {
+    name: "FrontendArk",
+    description: "FrontendArk helps you practice JavaScript and React interview questions online.",
+    liveLink: "https://frontendark.com",
+  }
 
   return (
     <section 
@@ -73,6 +79,9 @@ const Projects = () => {
         </div>
         <div ref={projectRef}>
           <Project {...projectCryptonism} />
+        </div>
+        <div ref={projectRef}>
+          <Project {...projectFrontendArk} />
         </div>
       </section>
     </section>
