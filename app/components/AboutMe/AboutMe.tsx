@@ -11,7 +11,8 @@ const AboutMe = () => {
 
       <div className='w-full h-screen flex flex-col justify-center items-center space-y-5'>
           <p className="text-sm md:text-lg lg:text-2xl xl:text-3xl text-gray-700 pl-4 md:px-10 max-w-xl leading-relaxed text-center">
-            Hi, I&apos;m <span className="text-[#F7939D] font-semibold">Sabkat Ahmed Rafi</span>, a web developer who specializes in building clean, responsive, and high-performance websites. I love turning complex problems into intuitive digital experiences using modern tools and technologies. <span className='md:flex hidden '>Whether it&apos;s creating seamless UIs or optimizing for speed and accessibility, I focus on writing scalable, maintainable code that brings real value to users and businesses alike.</span>
+           Hi, I’m <span className="text-[#F7939D] font-semibold">Sabkat Ahmed Rafi</span>. I build systems and interfaces that feel simple on the surface but are powered by strong engineering underneath. I enjoy designing structure — how data flows, how components talk, and how the whole experience fits together.
+           I focus on clarity, consistency, and creating things that actually make sense to the people using them.
           </p>
           <div className='md:hidden flex gap-2 pl-4'>
             <Link href={"https://github.com/sabkat-ahmed-rafi"} target="_blank"><FaGithub className='size-7' /></Link>
