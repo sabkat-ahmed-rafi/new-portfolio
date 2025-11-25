@@ -5,7 +5,7 @@ import React from 'react'
 const Skill = () => {
   return (
     <section
-    className="min-h-screen bg-repeat text-white bg-black">
+    className="min-h-screen max-h-full bg-repeat overflow-y-auto text-white bg-black pb-5">
       <h1 className='md:text-6xl text-xl font-extrabold text-center py-10'>Skills</h1>
 <div className="flex justify-center items-center flex-wrap gap-1">
     {[
@@ -24,9 +24,14 @@ const Skill = () => {
   "https://img.shields.io/badge/Node.js-F7939D?style=for-the-badge&logo=node.js&logoColor=white",
   "https://img.shields.io/badge/Express.js-F7939D?style=for-the-badge&logo=express&logoColor=white",
   "https://img.shields.io/badge/MongoDB-F7939D?style=for-the-badge&logo=mongodb&logoColor=white",
+  "https://img.shields.io/badge/PostGreSql-F7939D?style=for-the-badge&logo=postGresql&logoColor=white",
+  "https://img.shields.io/badge/Mongoose-F7939D?style=for-the-badge&logo=mongoose&logoColor=white",
+  "https://img.shields.io/badge/Prisma-F7939D?style=for-the-badge&logo=prisma&logoColor=white",
   "https://img.shields.io/badge/Firebase-F7939D?style=for-the-badge&logo=firebase&logoColor=white",
+  "https://img.shields.io/badge/Supabase-F7939D?style=for-the-badge&logo=supabase&logoColor=white",
   "https://img.shields.io/badge/OOP-F7939D?style=for-the-badge&logo=code&logoColor=white",
-  "https://img.shields.io/badge/Git-F7939D?style=for-the-badge&logo=git&logoColor=white"
+  "https://img.shields.io/badge/Git-F7939D?style=for-the-badge&logo=git&logoColor=white",
+
     ].map((src, idx) => (
       <img
         key={idx}
