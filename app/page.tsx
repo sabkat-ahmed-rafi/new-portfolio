@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -20,8 +20,22 @@ export default function Home() {
   const [introReady, setIntroReady] = useState(false);
   const [preloaderDone, setPreloaderDone] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [forceReady, setForceReady] = useState(false);
 
-  const allReady = modelLoaded && introReady;
+  const handlePreloaderHidden = useCallback(() => {
+    setPreloaderDone(true);
+  }, []);
+
+  // Timeout to force ready state if loading takes too long (5 seconds max)
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setForceReady(true);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const allReady = (modelLoaded && introReady) || forceReady;
     useEffect(() => {
       const handleResize = () => {
         const isMobile = window.innerWidth < 768;
@@ -68,7 +82,7 @@ export default function Home() {
     <>
       <Preloader
         hide={allReady}
-        onHidden={() => setPreloaderDone(true)} // triggers the start of Intro animations
+        onHidden={handlePreloaderHidden} // triggers the start of Intro animations
       />
 
       <section ref={containerRef} className={isMobile ? "relative h-auto" : "relative h-screen overflow-hidden"} >

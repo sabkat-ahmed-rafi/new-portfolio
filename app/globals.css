@@ -131,3 +131,34 @@ body, html {
               0 0 50px #F7939D,
               0 0 100px #F7939D;
 }
+
+/* Loader Animations */
+@keyframes loader-shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes loader-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.6;
+  }
+}
+
+.loader-title {
+  text-shadow: 0 0 20px rgba(247, 147, 157, 0.8);
+  background: linear-gradient(90deg, #fff, #f7939d, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: loader-shimmer 3s linear infinite;
+}
